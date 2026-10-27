@@ -1,6 +1,6 @@
 {
-  "cleanUrls": true,
   "rewrites": [
-    { "source": "/:survey", "destination": "/survey.html" }
+    { "source": "/admin", "destination": "/admin.html" },
+    { "source": "/:survey([a-z0-9-]+)", "destination": "/survey.html" }
   ]
 }
