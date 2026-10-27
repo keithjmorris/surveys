@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="page-wrap">
+    <header class="site-header" id="header"></header>
+    <main class="card">
+      <p class="intro">Choose a survey below. Thank you for helping us improve.</p>
+      <div class="options" id="list"></div>
+    </main>
+  </div>
+  <script type="module">
+    import { ORG, SURVEYS } from "/surveys-config.js";
+    import { renderHeader, escapeHtml } from "/shared.js";
+    renderHeader(document.getElementById("header"), "Supporter feedback");
+    document.title = `${ORG.name} — Feedback`;
+    document.getElementById("list").innerHTML = SURVEYS.map(s =>
+      `<a class="option" style="text-decoration:none;color:inherit;font-weight:600" href="/${s.id}">${escapeHtml(s.title)} →</a>`
+    ).join("");
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Survey admin</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="page-wrap wide">
+    <header class="site-header admin-bar">
+      <div id="header" style="display:flex;align-items:center;gap:14px;"></div>
+      <button class="btn ghost small" id="signOutBtn" style="display:none;">Sign out</button>
+    </header>
+
+    <!-- Login -->
+    <section id="loginView" class="card" style="max-width:420px;margin:0 auto;display:none;">
+      <h2 style="margin-top:0;color:var(--navy);">Admin sign in</h2>
+      <form id="loginForm">
+        <label class="q-label" for="email">Email</label>
+        <input type="email" id="email" autocomplete="username" required>
+        <label class="q-label" for="password" style="margin-top:12px;">Password</label>
+        <input type="password" id="password" autocomplete="current-password" required>
+        <div id="loginError" class="alert alert-error" style="margin-top:14px;"></div>
+        <button class="btn block" type="submit" id="loginBtn">Sign in</button>
+      </form>
+    </section>
+
+    <!-- Dashboard -->
+    <section id="dashView" style="display:none;">
+      <nav class="tabs" id="tabs"></nav>
+      <div class="card">
+        <div class="filters">
+          <label>From <input type="date" id="fFrom"></label>
+          <label>To <input type="date" id="fTo"></label>
+          <label>Time of day
+            <select id="fTime">
+              <option value="">All</option>
+              <option>Morning</option><option>Lunchtime</option><option>Afternoon</option><option>Evening</option>
+            </select>
+          </label>
+          <label id="fCtxWrap">Match <select id="fCtx"><option value="">All</option></select></label>
+          <button class="btn ghost small" id="clearBtn">Clear</button>
+          <span style="flex:1"></span>
+          <button class="btn ghost small" id="refreshBtn">Refresh</button>
+          <button class="btn small" id="csvBtn">Download CSV</button>
+        </div>
+        <div class="stat-grid" id="stats"></div>
+        <div class="breakdown" id="breakdown"></div>
+        <div class="table-wrap" id="tableWrap"></div>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="/admin.js"></script>
+</body>
+</html>

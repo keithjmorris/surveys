@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="page-wrap">
+    <header class="site-header" id="header"></header>
+
+    <main>
+      <div id="successMsg" class="alert alert-success" style="display:none;"></div>
+
+      <form id="surveyForm" class="card" novalidate>
+        <div id="contextPill"></div>
+        <p class="intro" id="intro"></p>
+        <div id="questions"></div>
+        <div id="formError" class="alert alert-error" role="alert"></div>
+        <button type="submit" class="btn block" id="submitBtn">Submit feedback</button>
+      </form>
+    </main>
+
+    <p class="footer" id="footer"></p>
+  </div>
+
+  <script type="module" src="/survey.js"></script>
+</body>
+</html>
